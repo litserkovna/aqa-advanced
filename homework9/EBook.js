@@ -14,6 +14,7 @@ export default class EBook extends Book {
             this._format = newFormat;
         } else {
             console.error('File format must be a string and not less than 2 characters.');
+            return;
         }
     }
 
