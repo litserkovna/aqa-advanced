@@ -1,14 +1,14 @@
 async function fetchTodoById(id) {
     try {
         const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
-        const ToDoBody = await response.json();
         if (!response.ok) {
             throw new Error(`Error on fetching todo with ID ${id}`);
         }
-        return ToDoBody;
+        const todoBody = await response.json();
+        return todoBody;
     } catch (error) {
-        throw new Error("Failed to fetch");
+        console.error("Failed to fetch", error);
+        return error;
     }
 }
-
 export default fetchTodoById;

@@ -1,14 +1,14 @@
 async function fetchUserById(id) {
     try {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-        const ToDoUser = await response.json();
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`); 
         if (!response.ok) {
             throw new Error(`Error on fetching user with ID ${id}`);
         }
-        return ToDoUser;
+        const todoUser = await response.json();
+        return todoUser;
     } catch (error) {
-        throw new Error("Failed to fetch");
+        console.error("Failed to fetch user", error);
+        return error;
     }
 }
-
 export default fetchUserById;
