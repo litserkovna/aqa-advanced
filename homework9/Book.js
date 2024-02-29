@@ -1,57 +1,54 @@
 export default class Book {
-    constructor(name, author, year) {
-        this._name = name;
-        this._author = author;
-        this._year = year;
-    }
+  constructor(name, author, year) {
+    this._name = name;
+    this._author = author;
+    this._year = year;
+  }
 
-    get name() {
-        return this._name;
-    }
+  get name() {
+    return this._name;
+  }
 
-    set name(newName) {
-        if (typeof newName !== "string") {
-            console.error('Name must be a string.');
-            return;
-        }
-        if (newName.length < 1) {
-            console.error("Error: Name length should be at least 1 symbol");
-            return;
-        }
-        this._name = newName;
+  set name(newName) {
+    if (typeof newName !== 'string') {
+      console.error('Name must be a string.');
+      return;
     }
-    get author() {
-        return this._author;
+    if (newName.length < 1) {
+      console.error('Error: Name length should be at least 1 symbol');
+      return;
     }
+    this._name = newName;
+  }
+  get author() {
+    return this._author;
+  }
 
-    set author(newAuthor) {
-        if (typeof newAuthor !== "string") {
-            console.warn('Author must be a string.');
-            return;
-        }
-        this._author = newAuthor;
+  set author(newAuthor) {
+    if (typeof newAuthor !== 'string') {
+      console.warn('Author must be a string.');
+      return;
     }
+    this._author = newAuthor;
+  }
 
-    get year() {
-        return this._year;
-    }
+  get year() {
+    return this._year;
+  }
 
-    set year(newYear) {
-        if (typeof newYear !== "number" || newYear <= 0) {
-            console.warn('Year must be a positive number.');
-            return;
-        }
-        this._year = newYear;
+  set year(newYear) {
+    if (typeof newYear !== 'number' || newYear <= 0) {
+      console.warn('Year must be a positive number.');
+      return;
     }
+    this._year = newYear;
+  }
 
-    printInfo() {
-        console.log(`The review is for the ${this._name} written by ${this._author} in ${this._year}.`);
-    }
+  printInfo() {
+    console.log(`The review is for the ${this._name} written by ${this._author} in ${this._year}.`);
+  }
 
-    static findOldestBook(books) {
-        return books.sort((a, b) => a.year - b.year)[0];
-    }
+  static findOldestBook(books) {
+    return books.sort((a, b) => a.year - b.year)[0];
+  }
 }
-
-
-
