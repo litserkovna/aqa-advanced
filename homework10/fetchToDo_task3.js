@@ -11,4 +11,3 @@ async function fetchTodoById(id) {
   }
 }
 
-export default fetchTodoById;

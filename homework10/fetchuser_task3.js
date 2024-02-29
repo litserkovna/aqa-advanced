@@ -10,5 +10,3 @@ async function fetchUserById(id) {
     throw new Error('Failed to fetch');
   }
 }
-
-export default fetchUserById;
